@@ -6,7 +6,7 @@
 package conexion;
 
 import java.sql.Connection;
-import entidades.Alumno;
+
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JOptionPane;
+import universidadejemplos.Entidades.Alumno;
 
 /**
  *
@@ -175,4 +176,6 @@ public class AlumnoData {
         }
         return alumnos;
     }
+
+    
 }
