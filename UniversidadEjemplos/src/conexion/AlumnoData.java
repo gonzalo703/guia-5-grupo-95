@@ -45,7 +45,7 @@ public class AlumnoData {
                       // obtener clave
                      ResultSet rs=ps.getGeneratedKeys();
                    if(rs.next()){
-                       alumno.setId_Alumno(rs.getInt(1));
+                       alumno.setId_Alumnos(rs.getInt(1));
                        JOptionPane.showMessageDialog(null, "Alumno Guardado");
                    }
                    ps.close();
@@ -63,7 +63,7 @@ public class AlumnoData {
             ps.setString(2,alumno.getApellido());
             ps.setString(3, alumno.getNombre());
             ps.setDate(4, Date.valueOf(alumno.getFechaNacimiento()));
-            ps.setInt(5, alumno.getId_Alumno());
+            ps.setInt(5, alumno.getId_Alumnos());
             int exito = ps.executeUpdate();
             
             if(exito == 1 ){
@@ -100,7 +100,7 @@ public class AlumnoData {
             ResultSet rs=Ps.executeQuery();
             if (rs.next()){
                 alumno = new Alumno();
-                alumno.setId_Alumno(id);
+                alumno.setId_Alumnos(id);
                 alumno.setDNI(rs.getInt("DNI"));
                 alumno.setApellido(rs.getString("apellido"));
                 alumno.setNombre(rs.getString("nombre"));
@@ -128,7 +128,7 @@ public class AlumnoData {
             ResultSet rs=Ps.executeQuery();
             if (rs.next()){
                 alumno = new Alumno();
-                alumno.setId_Alumno(rs.getInt("id_Alumno"));
+                alumno.setId_Alumnos(rs.getInt("id_Alumno"));
                 alumno.setDNI(rs.getInt(dni));
                 alumno.setApellido(rs.getString("apellido"));
                 alumno.setNombre(rs.getString("nombre"));
@@ -155,12 +155,11 @@ public class AlumnoData {
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs=ps.executeQuery();
-            System.out.println("2");
             
             while (rs.next()){
               
                 Alumno alumno=new Alumno();    
-                alumno.setId_Alumno(rs.getInt("id_Alumno"));
+                alumno.setId_Alumnos(rs.getInt("id_Alumnos"));
                 alumno.setDNI(rs.getInt("DNI"));
                 alumno.setApellido(rs.getString("apellido"));
                 alumno.setNombre(rs.getString("nombre"));
@@ -175,7 +174,5 @@ public class AlumnoData {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla alumno1");
         }
         return alumnos;
-    }
-
-    
+   } 
 }
