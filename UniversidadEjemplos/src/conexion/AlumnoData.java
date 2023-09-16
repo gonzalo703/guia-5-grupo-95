@@ -155,7 +155,6 @@ public class AlumnoData {
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs=ps.executeQuery();
-            System.out.println("2");
             
             while (rs.next()){
               
