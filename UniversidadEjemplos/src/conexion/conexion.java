@@ -19,13 +19,13 @@ public class conexion {
     private static String url = "jdbc:mariadb://localhost/unilp";
     private static String usuario = "root";
     private static String password = "";
-    
+    //por que static ? 
     private static conexion conexion = null;
-    
+    //(juan) aqui me tienes que explicar por que no lo hisiste como en el video la anotacion es para que no me olvide de preguntar 
+    // por que en el video inicializa conexion vacia y después al hacer la función conection en el mismo try inicializa los drivers  
     private conexion(){
         try{
             Class.forName("org.mariadb.jdbc.Driver");
-            
         } catch (ClassNotFoundException ex){
             JOptionPane.showMessageDialog(null,"Error al cargar driver");
         } 
@@ -38,7 +38,7 @@ public class conexion {
             
         } try {
             con = DriverManager.getConnection(url + "?userLegacyDatatimeCode=false&serverTimezone=UTC" + "&user="+ usuario + "&password="+ password);
-            
+            //aqui tambien hay una locura
         }catch(SQLException ex){
             JOptionPane.showMessageDialog(null, "Error de conexion");
         }
