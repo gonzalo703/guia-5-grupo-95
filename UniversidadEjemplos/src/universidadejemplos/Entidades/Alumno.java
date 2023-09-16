@@ -5,6 +5,7 @@ import java.time.LocalDate;
 
 
 public class Alumno {
+    //chicos la entidad alumno no deveria tener dni ? 
   private int idAlumno;
   private String apellido;
   private String nombre;
