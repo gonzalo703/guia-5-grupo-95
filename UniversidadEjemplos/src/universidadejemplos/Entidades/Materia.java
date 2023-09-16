@@ -10,33 +10,33 @@ package universidadejemplos.Entidades;
  * @author yo
  */
 public class Materia {
-   private int idMateria;
-   private String nombre;
-   private int año;
-   private boolean estado;
+   private int id_Materia;
+    private String nombre;
+    private int Año;
+    private boolean Estado;
 
     public Materia() {
     }
 
-    public Materia(int idMateria, String nombre, int año, boolean estado) {
-        this.idMateria = idMateria;
+    public Materia(int id_Materia, String nombre, int Año, boolean Estado) {
+        this.id_Materia = id_Materia;
         this.nombre = nombre;
-        this.año = año;
-        this.estado = estado;
+        this.Año = Año;
+        this.Estado = Estado;
     }
 
-    public Materia(String nombre, int año, boolean estado) {
+    public Materia(String nombre, int Año, boolean Estado) {
         this.nombre = nombre;
-        this.año = año;
-        this.estado = estado;
+        this.Año = Año;
+        this.Estado = Estado;
     }
 
-    public int getIdMateria() {
-        return idMateria;
+    public int getId_Materia() {
+        return id_Materia;
     }
 
-    public void setIdMateria(int idMateria) {
-        this.idMateria = idMateria;
+    public void setId_Materia(int id_Materia) {
+        this.id_Materia = id_Materia;
     }
 
     public String getNombre() {
@@ -48,24 +48,23 @@ public class Materia {
     }
 
     public int getAño() {
-        return año;
+        return Año;
     }
 
-    public void setAño(int año) {
-        this.año = año;
+    public void setAño(int Año) {
+        this.Año = Año;
     }
 
     public boolean isEstado() {
-        return estado;
+        return Estado;
     }
 
-    public void setEstado(boolean estado) {
-        this.estado = estado;
+    public void setEstado(boolean Estado) {
+        this.Estado = Estado;
     }
 
     @Override
     public String toString() {
-        return "Materia{" + "idMateria=" + idMateria + ", nombre=" + nombre + ", a\u00f1o=" + año + '}';
-    }
-   
+        return "Materia{" + "id_Materia=" + id_Materia + ", nombre=" + nombre + ", A\u00f1o=" + Año + '}';
+    } 
 }

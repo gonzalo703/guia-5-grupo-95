@@ -5,36 +5,47 @@ import java.time.LocalDate;
 
 
 public class Alumno {
-  private int idAlumno;
-  private String apellido;
-  private String nombre;
-  private LocalDate fechaNac;  
-  private boolean estado;
-
+    private int id_Alumnos;
+    private int DNI;
+    private String apellido;
+    private String nombre;
+    private LocalDate fechaNacimiento;
+    private boolean Estado;  
+    
     public Alumno() {
     }
 
-    public Alumno(int idAlumno, String apellido, String nombre, LocalDate fechaNac, boolean estado) {
-        this.idAlumno = idAlumno;
+    public Alumno(int id_Alumnos, int DNI, String apellido, String nombre, LocalDate fechaNacimiento, boolean Estado) {
+        this.id_Alumnos = id_Alumnos;
+        this.DNI = DNI;
         this.apellido = apellido;
         this.nombre = nombre;
-        this.fechaNac = fechaNac;
-        this.estado = estado;
+        this.fechaNacimiento = fechaNacimiento;
+        this.Estado = Estado;
     }
 
-    public Alumno(String apellido, String nombre, LocalDate fechaNac, boolean estado) {
+    public Alumno(int DNI, String apellido, String nombre, LocalDate fechaNacimiento, boolean Estado) {
+        this.DNI = DNI;
         this.apellido = apellido;
         this.nombre = nombre;
-        this.fechaNac = fechaNac;
-        this.estado = estado;
+        this.fechaNacimiento = fechaNacimiento;
+        this.Estado = Estado;
     }
 
-    public int getIdAlumno() {
-        return idAlumno;
+    public int getId_Alumnos() {
+        return id_Alumnos;
     }
 
-    public void setIdAlumno(int idAlumno) {
-        this.idAlumno = idAlumno;
+    public void setId_Alumnos(int id_Alumno) {
+        this.id_Alumnos = id_Alumnos;
+    }
+
+    public int getDNI() {
+        return DNI;
+    }
+
+    public void setDNI(int DNI) {
+        this.DNI = DNI;
     }
 
     public String getApellido() {
@@ -53,49 +64,25 @@ public class Alumno {
         this.nombre = nombre;
     }
 
-    public LocalDate getFechaNac() {
-        return fechaNac;
+    public LocalDate getFechaNacimiento() {
+        return fechaNacimiento;
     }
 
-    public void setFechaNac(LocalDate fechaNac) {
-        this.fechaNac = fechaNac;
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
     }
 
     public boolean isEstado() {
-        return estado;
+        return Estado;
     }
 
-    public void setEstado(boolean estado) {
-        this.estado = estado;
+    public void setEstado(boolean Estado) {
+        this.Estado = Estado;
     }
 
     @Override
     public String toString() {
-        return "Alumno{" + "idAlumno=" + idAlumno + ", apellido=" + apellido + ", nombre=" + nombre + '}';
-    }
-
-    public int getDNI() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public String getFechaNacimiento() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void setId_Alumno(int aInt) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public int getId_Alumno() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void setDNI(int aInt) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void setFechaNacimiento(LocalDate toLocalDate) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "Alumnos{" + "id_Alumnos=" + id_Alumnos + ", DNI=" + DNI + ", apellido=" + apellido + ", nombre=" + nombre + '}';
     }
   
 }
