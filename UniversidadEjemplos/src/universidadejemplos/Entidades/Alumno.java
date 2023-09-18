@@ -39,7 +39,7 @@ public class Alumno {
         return id_Alumnos;
     }
 
-    public void setId_Alumnos(int id_Alumno) {
+    public void setId_Alumnos(int id_Alumnos) {
         this.id_Alumnos = id_Alumnos;
     }
 

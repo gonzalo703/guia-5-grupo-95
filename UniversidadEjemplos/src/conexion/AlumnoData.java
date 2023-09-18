@@ -77,7 +77,7 @@ public class AlumnoData {
     }
     
     public void eliminarAlumno(int id){
-        String sql = "UPDATE alumno SET estado = 0 WHERE id_Alumnos = ?";
+          String sql = "UPDATE alumno SET estado = 0 WHERE id_Alumnos = ?";
         
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -120,16 +120,17 @@ public class AlumnoData {
         return alumno;
      }
      public Alumno buscarAlumnoDni(int dni){
-        String sql = "SELECT id_Alumnos, apellido, nombre, fechaNacimiento FROM alumno WHERE DNI= ? AND estado = 1 ";
+        String sql = "SELECT id_Alumnos,DNI, apellido, nombre, fechaNacimiento FROM alumno WHERE DNI= ? AND estado = 1 ";
         Alumno alumno = null;
         try {
             PreparedStatement Ps = con.prepareStatement(sql);
             Ps.setInt(1, dni);
             ResultSet rs=Ps.executeQuery();
+            
             if (rs.next()){
                 alumno = new Alumno();
-                alumno.setId_Alumnos(rs.getInt("id_Alumno"));
-                alumno.setDNI(rs.getInt(dni));
+                alumno.setId_Alumnos(rs.getInt("id_Alumnos"));
+                alumno.setDNI(rs.getInt("DNI"));
                 alumno.setApellido(rs.getString("apellido"));
                 alumno.setNombre(rs.getString("nombre"));
                 alumno.setFechaNacimiento(rs.getDate("fechaNacimiento").toLocalDate());
@@ -140,10 +141,8 @@ public class AlumnoData {
                 JOptionPane.showMessageDialog(null," No existe alumno ");
             }
             
-            
-            
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla alumno");
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla alumno2");
         }
         return alumno;
      }
@@ -155,6 +154,7 @@ public class AlumnoData {
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs=ps.executeQuery();
+            System.out.println("2");
             
             while (rs.next()){
               
@@ -174,5 +174,7 @@ public class AlumnoData {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla alumno1");
         }
         return alumnos;
-   } 
+    }
+
+ 
 }
