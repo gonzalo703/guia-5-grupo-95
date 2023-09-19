@@ -12,7 +12,6 @@ import java.time.ZoneId;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import universidadejemplos.Entidades.Alumno;
-import conexion.AlumnoData;
 
 
 /**
@@ -46,6 +45,7 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
         buttonGroup2 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
+        alumnoData1 = new conexion.AlumnoData();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -144,11 +144,6 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jTAlumno.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTAlumnoMouseClicked(evt);
-            }
-        });
         jScrollPane1.setViewportView(jTAlumno);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -296,6 +291,33 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+//         int dni = Integer.parseInt(JTDNI.getText());
+//         String apellido = jTapellido.getText();
+//         String nombre = jTnombre.getText();
+//         LocalDate Fnac =jDfnacimiento.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+//         boolean seleccionado = jRestado.isSelected();
+//         int selec=jTAlumno.getSelectedRow();
+//         // Obtén el ID del alumno seleccionado de la tabla
+//        int id_Alumnos = (int) jTAlumno.getValueAt(selec, 0);
+//        if(selec!=-1){
+//    // Crea una instancia de Alumno con los datos ingresados
+//        Alumno alumno1 = new Alumno(dni, apellido, nombre, Fnac, seleccionado);
+//    
+//    // Llama al método modificarAlumno de AlumnoData para guardar los cambios
+//        AlumnoData alu = new AlumnoData();
+//        alu.modificarAlumno(alumno1);
+//    
+//    // Actualiza la fila en la tabla con los nuevos datos
+//        jTAlumno.setValueAt(dni, selec, 1); // Actualiza la columna del DNI
+//        jTAlumno.setValueAt(apellido, selec, 2); // Actualiza la columna del apellido
+//        jTAlumno.setValueAt(nombre, selec, 3); // Actualiza la columna del nombre
+//        jTAlumno.setValueAt(Fnac, selec, 4); // Actualiza la columna de la fecha de nacimiento
+//        jTAlumno.setValueAt(seleccionado, selec, 5); // Actualiza la columna del estado
+//    
+//         JOptionPane.showMessageDialog(null, "Cambios guardados correctamente.");
+//        } else {
+//        JOptionPane.showMessageDialog(null, "Seleccione alumno para guardar cambios.");
+//    } 
          int selec=jTAlumno.getSelectedRow();
          int id=(Integer)jTAlumno.getValueAt(selec, 0);
 
@@ -313,30 +335,12 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
          } else {
         JOptionPane.showMessageDialog(null, "Seleccione un alumno para guardar cambios.");
     }
-  
     }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jTAlumnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTAlumnoMouseClicked
-        // TODO add your handling code here:
-        int selec=jTAlumno.getSelectedRow();
-        if (selec !=-1){
-            int dni = (Integer)jTAlumno.getValueAt(selec, 1);
-            String apellido = (String)jTAlumno.getValueAt(selec,2);     
-            String nombre = (String) jTAlumno.getValueAt(selec, 3);
-            String fechaStr = (String) jTAlumno.getValueAt(selec, 4); // Obtener la fecha como una cadena
-            LocalDate fnac = LocalDate.parse(fechaStr);
-            boolean tr = (boolean) jTAlumno.getValueAt(selec, 5);
-            JTDNI.setText(dni+"");
-            jTapellido.setText(apellido);
-            jTnombre.setText(nombre);
-            jRestado.setHideActionText(tr);
-          
-        }              
-    }//GEN-LAST:event_jTAlumnoMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField JTDNI;
+    private conexion.AlumnoData alumnoData1;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JButton jButton1;
