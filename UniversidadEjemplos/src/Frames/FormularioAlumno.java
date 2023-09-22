@@ -11,7 +11,7 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import universidadejemplos.Entidades.Alumno;
+import Universidad.Entidades.Alumno;
 import conexion.AlumnoData;
 
 
@@ -292,11 +292,16 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+       //cierra ventana
+        
         this.dispose();
+        
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-         int selec=jTAlumno.getSelectedRow();
+         // selecciona la tabla
+        int selec=jTAlumno.getSelectedRow();
+        //extrae el id
          int id=(Integer)jTAlumno.getValueAt(selec, 0);
 
          if(selec!=-1){
@@ -305,6 +310,7 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
             String nombre = jTnombre.getText();
             LocalDate Fnac =jDfnacimiento.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
             boolean seleccionado = jRestado.isSelected();
+            
             Alumno alumno1 = new Alumno(id,dni, apellido, nombre, Fnac, seleccionado);
             AlumnoData alu = new AlumnoData();
             alu.modificarAlumno(alumno1);
@@ -361,6 +367,7 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
 
  private void cabecera(){
+     //crea columna de la tabla
      modelo.addColumn("id_Alumnos");
      modelo.addColumn("DNI");
      modelo.addColumn("apellido");

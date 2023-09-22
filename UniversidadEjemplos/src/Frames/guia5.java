@@ -98,6 +98,11 @@ public class guia5 extends javax.swing.JFrame {
         JMmateria.setText("Materia");
 
         JMTFmateria.setText("Formulario de Materia");
+        JMTFmateria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JMTFmateriaActionPerformed(evt);
+            }
+        });
         JMmateria.add(JMTFmateria);
 
         jMenuBar1.add(JMmateria);
@@ -105,6 +110,11 @@ public class guia5 extends javax.swing.JFrame {
         JMadministracion.setText("Administracion");
 
         JMTmanejoInscripciones.setText("Manejo de inscripciones");
+        JMTmanejoInscripciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JMTmanejoInscripcionesActionPerformed(evt);
+            }
+        });
         JMadministracion.add(JMTmanejoInscripciones);
 
         JMTmanipulacionNotas.setText("Manipulacion de Notas");
@@ -120,6 +130,11 @@ public class guia5 extends javax.swing.JFrame {
         JMconsultas.setText("Consultas");
 
         JMTalumnosXmaterias.setText("Alumnos por Materias");
+        JMTalumnosXmaterias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JMTalumnosXmateriasActionPerformed(evt);
+            }
+        });
         JMconsultas.add(JMTalumnosXmaterias);
 
         jMenuBar1.add(JMconsultas);
@@ -133,7 +148,12 @@ public class guia5 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JMTmanipulacionNotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMTmanipulacionNotasActionPerformed
-        // TODO add your handling code here:
+        Escritorio1.removeAll();
+        Escritorio1.repaint();
+        CargadeNotas notas= new CargadeNotas();
+        notas.setVisible(true);
+        Escritorio1.add(notas);
+        Escritorio1.moveToFront(notas);
 
     }//GEN-LAST:event_JMTmanipulacionNotasActionPerformed
 
@@ -150,6 +170,33 @@ public class guia5 extends javax.swing.JFrame {
         Escritorio1.add(alu);
         Escritorio1.moveToFront(alu);        // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void JMTFmateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMTFmateriaActionPerformed
+        Escritorio1.removeAll();
+        Escritorio1.repaint();
+        GestiondeMateria materia = new GestiondeMateria();
+        materia.setVisible(true);
+        Escritorio1.add(materia);
+        Escritorio1.moveToFront(materia);  
+    }//GEN-LAST:event_JMTFmateriaActionPerformed
+
+    private void JMTmanejoInscripcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMTmanejoInscripcionesActionPerformed
+       Escritorio1.removeAll();
+        Escritorio1.repaint();
+        FormularioInscripcion inscrip = new FormularioInscripcion();
+        inscrip.setVisible(true);
+        Escritorio1.add(inscrip);
+        Escritorio1.moveToFront(inscrip);
+    }//GEN-LAST:event_JMTmanejoInscripcionesActionPerformed
+
+    private void JMTalumnosXmateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMTalumnosXmateriasActionPerformed
+        Escritorio1.removeAll();
+        Escritorio1.repaint();
+        ConsultaAlumnos calu= new ConsultaAlumnos();
+        calu.setVisible(true);
+        Escritorio1.add(calu);
+        Escritorio1.moveToFront(calu);
+    }//GEN-LAST:event_JMTalumnosXmateriasActionPerformed
 
     /**
      * @param args the command line arguments

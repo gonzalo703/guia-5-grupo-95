@@ -9,6 +9,6 @@ package conexion;
  *
  * @author gonza
  */
-public class Inscripcion {
+public class InscripcionData {
     
 }
