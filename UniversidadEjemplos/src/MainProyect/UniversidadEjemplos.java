@@ -2,7 +2,8 @@
 package MainProyect;
 
 import conexion.AlumnoData;
-import Universidad.Entidades.Alumno;
+
+
 
 
 public class UniversidadEjemplos {

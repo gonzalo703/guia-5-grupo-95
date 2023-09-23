@@ -5,7 +5,7 @@
  */
 package Frames;
 
-import conexion.AlumnoData;
+
 
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -304,7 +304,7 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
         //extrae el id
          int id=(Integer)jTAlumno.getValueAt(selec, 0);
 
-         if(selec!=-1){
+         if(selec!=1){
           int dni= Integer.parseInt(JTDNI.getText().trim());
             String apellido = jTapellido.getText();
             String nombre = jTnombre.getText();
@@ -329,8 +329,7 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
             int dni = (Integer)jTAlumno.getValueAt(selec, 1);
             String apellido = (String)jTAlumno.getValueAt(selec,2);     
             String nombre = (String) jTAlumno.getValueAt(selec, 3);
-            String fechaStr = (String) jTAlumno.getValueAt(selec, 4); // Obtener la fecha como una cadena
-            LocalDate fnac = LocalDate.parse(fechaStr);
+            LocalDate fnac = (LocalDate) jTAlumno.getValueAt(selec, 4); // Obtener la fecha como una cadena
             boolean tr = (boolean) jTAlumno.getValueAt(selec, 5);
             JTDNI.setText(dni+"");
             jTapellido.setText(apellido);
