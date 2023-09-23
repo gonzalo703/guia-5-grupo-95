@@ -14,8 +14,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
-import universidadejemplos.Entidades.Alumno;
-import universidadejemplos.Entidades.Materia;
+import Universidad.Entidades.Alumno;
+import Universidad.Entidades.Materia;
 
 /**
  *

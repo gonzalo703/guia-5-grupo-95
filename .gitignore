@@ -24,3 +24,5 @@ hs_err_pid*
 replay_pid*
 /UniversidadEjemplos_test/nbproject/private/
 /UniversidadEjemplos_test/build/
+/UniversidadEjemplos/build/
+/UniversidadEjemplos/nbproject/private/

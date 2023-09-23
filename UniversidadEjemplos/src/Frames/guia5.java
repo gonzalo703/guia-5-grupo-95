@@ -98,13 +98,28 @@ public class guia5 extends javax.swing.JFrame {
         JMmateria.setText("Materia");
 
         JMTFmateria.setText("Formulario de Materia");
+        JMTFmateria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JMTFmateriaActionPerformed(evt);
+            }
+        });
         JMmateria.add(JMTFmateria);
 
         jMenuBar1.add(JMmateria);
 
         JMadministracion.setText("Administracion");
+        JMadministracion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JMadministracionActionPerformed(evt);
+            }
+        });
 
         JMTmanejoInscripciones.setText("Manejo de inscripciones");
+        JMTmanejoInscripciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JMTmanejoInscripcionesActionPerformed(evt);
+            }
+        });
         JMadministracion.add(JMTmanejoInscripciones);
 
         JMTmanipulacionNotas.setText("Manipulacion de Notas");
@@ -118,13 +133,28 @@ public class guia5 extends javax.swing.JFrame {
         jMenuBar1.add(JMadministracion);
 
         JMconsultas.setText("Consultas");
+        JMconsultas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JMconsultasActionPerformed(evt);
+            }
+        });
 
         JMTalumnosXmaterias.setText("Alumnos por Materias");
+        JMTalumnosXmaterias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JMTalumnosXmateriasActionPerformed(evt);
+            }
+        });
         JMconsultas.add(JMTalumnosXmaterias);
 
         jMenuBar1.add(JMconsultas);
 
         JMsalir.setText("Salir");
+        JMsalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JMsalirActionPerformed(evt);
+            }
+        });
         jMenuBar1.add(JMsalir);
 
         setJMenuBar(jMenuBar1);
@@ -133,6 +163,13 @@ public class guia5 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JMTmanipulacionNotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMTmanipulacionNotasActionPerformed
+        Escritorio1.removeAll();
+        Escritorio1.repaint();
+        CargadeNotas notas= new CargadeNotas();
+        notas.setVisible(true);
+        Escritorio1.add(notas);
+        Escritorio1.moveToFront(notas);
+
         // TODO add your handling code here:
 
     }//GEN-LAST:event_JMTmanipulacionNotasActionPerformed
@@ -149,7 +186,51 @@ public class guia5 extends javax.swing.JFrame {
         alu.setVisible(true);
         Escritorio1.add(alu);
         Escritorio1.moveToFront(alu);        // TODO add your handling code here:
+        
+        
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void JMTFmateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMTFmateriaActionPerformed
+        Escritorio1.removeAll();
+        Escritorio1.repaint();
+        GestiondeMateria materia = new GestiondeMateria();
+        materia.setVisible(true);
+        Escritorio1.add(materia);
+        Escritorio1.moveToFront(materia);         // TODO add your handling code here:
+    }//GEN-LAST:event_JMTFmateriaActionPerformed
+
+    private void JMadministracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMadministracionActionPerformed
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JMadministracionActionPerformed
+
+    private void JMTalumnosXmateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMTalumnosXmateriasActionPerformed
+       Escritorio1.removeAll();
+        Escritorio1.repaint();
+        ConsultaAlumnos calu= new ConsultaAlumnos();
+        calu.setVisible(true);
+        Escritorio1.add(calu);
+        Escritorio1.moveToFront(calu);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JMTalumnosXmateriasActionPerformed
+
+    private void JMTmanejoInscripcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMTmanejoInscripcionesActionPerformed
+        Escritorio1.removeAll();
+        Escritorio1.repaint();
+        FormularioInscripcion inscrip = new FormularioInscripcion();
+        inscrip.setVisible(true);
+        Escritorio1.add(inscrip);
+        Escritorio1.moveToFront(inscrip);  // TODO add your handling code here:
+    }//GEN-LAST:event_JMTmanejoInscripcionesActionPerformed
+
+    private void JMconsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMconsultasActionPerformed
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JMconsultasActionPerformed
+
+    private void JMsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMsalirActionPerformed
+  
+    }//GEN-LAST:event_JMsalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -180,10 +261,8 @@ public class guia5 extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new guia5().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new guia5().setVisible(true);
         });
     }
 
