@@ -24,8 +24,3 @@ hs_err_pid*
 replay_pid*
 /UniversidadEjemplos_test/nbproject/private/
 /UniversidadEjemplos_test/build/
-UniversidadEjemplos/src/MainProyect/UniversidadEjemplos.java
-UniversidadEjemplos/src/Frames/FormularioAlumno.java
-UniversidadEjemplos/src/conexion/MateriaData.java
-UniversidadEjemplos/src/conexion/AlumnoData.java
-UniversidadEjemplos/nbproject/private/private.xml
