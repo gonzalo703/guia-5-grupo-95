@@ -5,6 +5,9 @@
  */
 package Frames;
 
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+
 
 
 
@@ -19,7 +22,7 @@ public class guia5 extends javax.swing.JFrame {
      */
     public guia5() {
         initComponents();
-        
+        this.setExtendedState(MAXIMIZED_BOTH);
        
     }
 
@@ -150,6 +153,11 @@ public class guia5 extends javax.swing.JFrame {
         jMenuBar1.add(JMconsultas);
 
         JMsalir.setText("Salir");
+        JMsalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JMsalirMouseClicked(evt);
+            }
+        });
         JMsalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JMsalirActionPerformed(evt);
@@ -224,13 +232,17 @@ public class guia5 extends javax.swing.JFrame {
     }//GEN-LAST:event_JMTmanejoInscripcionesActionPerformed
 
     private void JMconsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMconsultasActionPerformed
-        
+      
         // TODO add your handling code here:
     }//GEN-LAST:event_JMconsultasActionPerformed
 
     private void JMsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMsalirActionPerformed
-  
+        
     }//GEN-LAST:event_JMsalirActionPerformed
+
+    private void JMsalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JMsalirMouseClicked
+    System.exit(0);
+    }//GEN-LAST:event_JMsalirMouseClicked
 
     /**
      * @param args the command line arguments

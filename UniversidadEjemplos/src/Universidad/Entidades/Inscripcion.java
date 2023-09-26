@@ -61,5 +61,13 @@ public class Inscripcion {
         return "Inscripcion{" + "id_Inscripcion=" + id_Inscripcion + ", nota=" + nota + ", alumno=" + alumno + ", materia=" + materia + '}';
         
     }
+
+    public void getNota(double aDouble) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+
+
+
   }  
 

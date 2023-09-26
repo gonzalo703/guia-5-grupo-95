@@ -6,7 +6,6 @@
 package conexion;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,7 +13,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
-import Universidad.Entidades.Alumno;
 import Universidad.Entidades.Materia;
 
 /**
@@ -31,7 +29,7 @@ public class MateriaData {
 
     public void guardarMateria(Materia materia) {
 
-        String sql = "INSERT INTO materia (nombreN, Año,Estado)"
+        String sql = "INSERT INTO materia (nombre, Año,Estado)"
                 + "VALUES(?,?,?)";
 
         try {
@@ -53,12 +51,14 @@ public class MateriaData {
     }
 
     public void modificarMateria(Materia materia) {
-        String sql = "UPDATE materia SET nombreN = ?, Año = ?, Estado = ? WHERE id:Materia = ?";
+        String sql = " UPDATE materia SET   nombre = ? , Año = ? , Estado = ? " + 
+                " WHERE id_Materia  = ? " ;
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, materia.getNombre());
             ps.setInt(2, materia.getAño());
             ps.setBoolean(3, materia.isEstado());
+            ps.setInt(4,materia.getId_Materia());
             int exito = ps.executeUpdate();
 
             if (exito == 1) {
@@ -87,7 +87,7 @@ public class MateriaData {
     }
 
     public Materia buscarMateria(int id) {
-        String sql = "SELECT nombreN, Año FROM materia WHERE id_Materia= ? AND estado = 1 ";
+        String sql = "SELECT nombre, Año FROM materia WHERE id_Materia= ? AND estado = 1 ";
         Materia materia = null;
         try {
             PreparedStatement Ps = con.prepareStatement(sql);
@@ -96,7 +96,7 @@ public class MateriaData {
             if (rs.next()) {
                 materia = new Materia();
                 materia.setId_Materia(id);
-                materia.setNombre(rs.getString("nombreN"));
+                materia.setNombre(rs.getString("nombre"));
                 materia.setAño(rs.getInt("Año"));
                 materia.setEstado(true);
                 Ps.close();
@@ -113,7 +113,7 @@ public class MateriaData {
     }
 
     public Materia buscarMateriaNombre(String nombreN) {
-        String sql = "SELECT id_Materia , Año FROM materia WHERE nombreN = ? AND estado = 1 ";
+        String sql = "SELECT id_Materia , Año FROM materia WHERE nombre = ? AND estado = 1 ";
         Materia materia = null;
         try {
             PreparedStatement Ps = con.prepareStatement(sql);
@@ -138,8 +138,8 @@ public class MateriaData {
 
     }
     
-    public List<Materia> buscarAlumnoLista() {
-        String sql = "SELECT id_Materia, nombreN,Año , Estado FROM materia WHERE  estado = 1 ";
+    public List<Materia> buscarMateriaLista() {
+        String sql = "SELECT id_Materia, nombre, Año , Estado FROM materia WHERE  estado = 1 ";
         ArrayList<Materia> materias = new ArrayList<>();
 
         try {
@@ -152,13 +152,13 @@ public class MateriaData {
                 materia.setEstado(true);
                 materia.setId_Materia(rs.getInt("id_Materia"));
                 materia.setAño(rs.getInt("año"));
-                materia.setNombre(rs.getString("NombreN"));
+                materia.setNombre(rs.getString("Nombre"));
                 materias.add(materia);
             }
             ps.close();
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla alumno1");
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla alumno");
         }
         return materias;
     }
